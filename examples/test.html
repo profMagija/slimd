@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en-001">
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<style>@media screen {
+    svg[data-slimd-svg=""] {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background-color: black;
+    }
+    svg[data-slimd-svg=""] {
+        display: none;
+    }
+    svg[data-slimd-svg=""].slimd-active {
+        display: block;
+    }
+}
+
+code,
+pre {
+    font-family: 'Cascadia Code', 'Operator Mono', 'Source Code Pro', monospace;
+    font-variant: normal;
+}
+
+div#p>svg>foreignObject>section {
+    align-items: stretch;
+    background: #fff;
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 29px;
+    height: 100%;
+    justify-content: center;
+    padding: 78.5px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: center center;
+}
+
+div#p>svg>foreignObject img {
+    object-fit: contain;
+    min-width: 0;
+    min-height: 0;
+    flex-grow: 1;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.katex-display {
+    align-self: center;
+}
+
+@media print {
+    body,
+    html {
+        background-color: #fff;
+        margin: 0;
+        page-break-inside: avoid;
+        break-inside: avoid-page;
+    }
+    div#p>svg>foreignObject>section {
+        page-break-before: always;
+        break-before: page;
+    }
+    div#p>svg>foreignObject>section,
+    div#p>svg>foreignObject>section * {
+        -webkit-print-color-adjust: exact!important;
+        animation-delay: 0s!important;
+        animation-duration: 0s!important;
+        color-adjust: exact!important;
+        transition: none!important;
+    }
+    div#p>svg[data-slimd-svg] {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+    }
+}</style><style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><style>body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+div.highlight {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+
+table.highlighttable {
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+table.highlighttable div.highlight {
+    border: none;
+}
+
+td.linenos {
+    padding-left: 30px;
+    width: 0;
+    min-width: fit-content;
+}
+
+footer {
+    color: #444;
+}</style><style>@page{ size: 1920px 1080px; margin: 0px; }</style></head><body><div id="p">
+<svg data-slimd-svg="" viewBox="0 0 1920 1080" id="slide-1">
+<foreignObject width="1920" height="1080">
+<section>
+<h1>A title slide</h1>
+<p>Hello there! This is a demo of my slide processor.</p>
+
+</section>
+</foreignObject>
+</svg>
+<svg data-slimd-svg="" viewBox="0 0 1920 1080" id="slide-2">
+<foreignObject width="1920" height="1080">
+<section>
+
+<h2>Markdown should work</h2>
+<ul>
+<li>This is a markdown sample
+<ul>
+<li>Still a bit sampling</li>
+</ul>
+</li>
+<li>Very markdown</li>
+</ul>
+<ol>
+<li>Mark</li>
+<li>Down</li>
+<li>???</li>
+<li>Profif</li>
+</ol>
+
+</section>
+</foreignObject>
+</svg>
+<svg data-slimd-svg="" viewBox="0 0 1920 1080" id="slide-3">
+<foreignObject width="1920" height="1080">
+<section>
+
+<h2>Another slide</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="hll">        <span class="k">return</span> <span class="mi">1</span>
+</span>    <span class="k">else</span><span class="p">:</span>
+<span class="hll">        <span class="k">return</span> <span class="n">fact</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span>
+</span></code></pre></div>
+</td></tr></table>
+<footer><p>Note the numbering of the line files. Also note this note.</p>
+</footer>
+
+</section>
+</foreignObject>
+</svg>
+<svg data-slimd-svg="" viewBox="0 0 1920 1080" id="slide-4">
+<foreignObject width="1920" height="1080">
+<section>
+
+<h2>Some math</h2>
+<p>An example paragraph <span class="katex">1</span> with some <span class="katex">\sqrt{2}</span> math.</p>
+<p>Brought to you by the <span class="katex">\int^1_0 \frac{\sin x}{x} \,dx</span> gang.</p>
+<span class="katex katex-display">\int \sin(x^2) \,dx
+
+</span>
+<span class="katex katex-display">\subparLatexSkills(x)
+
+</span>
+
+</section>
+</foreignObject>
+</svg>
+<svg data-slimd-svg="" viewBox="0 0 1920 1080" id="slide-5">
+<foreignObject width="1920" height="1080">
+<section>
+
+<h2>A graph</h2>
+<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDkuMSAoMCkKIC0tPgo8IS0tIFRpdGxlOiBHIFBhZ2VzOiAxIC0tPgo8c3ZnIHdpZHRoPSIyNDJwdCIgaGVpZ2h0PSI5OHB0Igogdmlld0JveD0iMC4wMCAwLjAwIDI0Mi4wMCA5OC4wMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CjxnIGlkPSJncmFwaDAiIGNsYXNzPSJncmFwaCIgdHJhbnNmb3JtPSJzY2FsZSgxIDEpIHJvdGF0ZSgwKSB0cmFuc2xhdGUoNCA5NCkiPgo8dGl0bGU+RzwvdGl0bGU+Cjxwb2x5Z29uIGZpbGw9IndoaXRlIiBzdHJva2U9InRyYW5zcGFyZW50IiBwb2ludHM9Ii00LDQgLTQsLTk0IDIzOCwtOTQgMjM4LDQgLTQsNCIvPgo8IS0tIEEgLS0+CjxnIGlkPSJub2RlMSIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+QTwvdGl0bGU+CjxlbGxpcHNlIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGN4PSIyNyIgY3k9Ii00NSIgcng9IjI3IiByeT0iMTgiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjciIHk9Ii00MS4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPkE8L3RleHQ+CjwvZz4KPCEtLSBCIC0tPgo8ZyBpZD0ibm9kZTIiIGNsYXNzPSJub2RlIj4KPHRpdGxlPkI8L3RpdGxlPgo8ZWxsaXBzZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBjeD0iMTE3IiBjeT0iLTcyIiByeD0iMjciIHJ5PSIxOCIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxMTciIHk9Ii02OC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPkI8L3RleHQ+CjwvZz4KPCEtLSBBJiM0NTsmZ3Q7QiAtLT4KPGcgaWQ9ImVkZ2UxIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT5BJiM0NTsmZ3Q7QjwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik01Mi4wNSwtNTIuMzhDNjEuNDQsLTU1LjI2IDcyLjM2LC01OC42MSA4Mi41LC02MS43MiIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI4MS43LC02NS4xNCA5Mi4yOSwtNjQuNzIgODMuNzUsLTU4LjQ1IDgxLjcsLTY1LjE0Ii8+CjwvZz4KPCEtLSBDIC0tPgo8ZyBpZD0ibm9kZTMiIGNsYXNzPSJub2RlIj4KPHRpdGxlPkM8L3RpdGxlPgo8ZWxsaXBzZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBjeD0iMTE3IiBjeT0iLTE4IiByeD0iMjciIHJ5PSIxOCIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxMTciIHk9Ii0xNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPkM8L3RleHQ+CjwvZz4KPCEtLSBBJiM0NTsmZ3Q7QyAtLT4KPGcgaWQ9ImVkZ2UyIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT5BJiM0NTsmZ3Q7QzwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik01Mi4wNSwtMzcuNjJDNjEuNDQsLTM0Ljc0IDcyLjM2LC0zMS4zOSA4Mi41LC0yOC4yOCIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI4My43NSwtMzEuNTUgOTIuMjksLTI1LjI4IDgxLjcsLTI0Ljg2IDgzLjc1LC0zMS41NSIvPgo8L2c+CjwhLS0gRCAtLT4KPGcgaWQ9Im5vZGU0IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT5EPC90aXRsZT4KPGVsbGlwc2UgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgY3g9IjIwNyIgY3k9Ii03MiIgcng9IjI3IiByeT0iMTgiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjA3IiB5PSItNjguMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5EPC90ZXh0Pgo8L2c+CjwhLS0gQiYjNDU7Jmd0O0QgLS0+CjxnIGlkPSJlZGdlMyIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+QiYjNDU7Jmd0O0Q8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTQ0LjQsLTcyQzE1Mi4zOSwtNzIgMTYxLjMxLC03MiAxNjkuODIsLTcyIi8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjE2OS45MiwtNzUuNSAxNzkuOTIsLTcyIDE2OS45MiwtNjguNSAxNjkuOTIsLTc1LjUiLz4KPC9nPgo8IS0tIEMmIzQ1OyZndDtEIC0tPgo8ZyBpZD0iZWRnZTQiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPkMmIzQ1OyZndDtEPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTEzNy41MywtMjkuOThDMTQ5LjM4LC0zNy4yNiAxNjQuNywtNDYuNjYgMTc3Ljg0LC01NC43MiIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIxNzYuMTcsLTU3LjggMTg2LjUyLC02MC4wNSAxNzkuODMsLTUxLjg0IDE3Ni4xNywtNTcuOCIvPgo8L2c+CjwhLS0gRSAtLT4KPGcgaWQ9Im5vZGU1IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT5FPC90aXRsZT4KPGVsbGlwc2UgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgY3g9IjIwNyIgY3k9Ii0xOCIgcng9IjI3IiByeT0iMTgiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjA3IiB5PSItMTQuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5FPC90ZXh0Pgo8L2c+CjwhLS0gQyYjNDU7Jmd0O0UgLS0+CjxnIGlkPSJlZGdlNSIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+QyYjNDU7Jmd0O0U8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTQ0LjQsLTE4QzE1Mi4zOSwtMTggMTYxLjMxLC0xOCAxNjkuODIsLTE4Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjE2OS45MiwtMjEuNSAxNzkuOTIsLTE4IDE2OS45MiwtMTQuNSAxNjkuOTIsLTIxLjUiLz4KPC9nPgo8L2c+Cjwvc3ZnPgo=">
+<p>Some more text under the graph.</p>
+<p>And even more text.</p>
+<p>Just to demonstrate auto-fitting of the graph above. yes it is magical. no I have never heared of <code>object-fit</code> before and tried to implement it manualy. yes I like to hurt myself.</p>
+<script>const SLIMD_MAX_SLIDE = 5;</script>
+</section>
+</foreignObject>
+</svg></div><script>function get_cur_slide() {
+    let idx = window.location.hash.substr(1);
+    if (idx == '') {
+        idx = '1';
+    }
+    return Number(idx);
+}
+
+function set_cur_slide(idx) {
+    window.location.hash = idx;
+}
+
+function update() {
+    let cur_slide_idx = get_cur_slide();
+    let all_slides = document.querySelectorAll('svg[data-slimd-svg=""]');
+    let cur_slide = document.getElementById('slide-' + cur_slide_idx);
+
+    all_slides.forEach(s => {
+        if (s === cur_slide) {
+            s.classList.add('slimd-active');
+        } else {
+            s.classList.remove('slimd-active');
+        }
+    })
+}
+
+document.querySelectorAll('.katex').forEach(e => {
+    let o = MathJax.tex2svg(e.innerHTML, {
+        display: e.classList.contains('katex-display')
+    });
+    e.innerHTML = o.innerHTML;
+})
+
+document.body.onkeydown = (ev) => {
+    let cur_idx = get_cur_slide();
+    if (ev.keyCode == 37 || ev.keyCode == 38 || ev.keyCode == 33) {
+        if (cur_idx > 1) {
+            set_cur_slide(cur_idx - 1);
+            update();
+        }
+    }
+
+    if (ev.keyCode == 39 || ev.keyCode == 40 || ev.keyCode == 34) {
+        if (cur_idx < SLIMD_MAX_SLIDE) {
+            set_cur_slide(cur_idx + 1);
+            update();
+        }
+    }
+}
+
+update();</script></body></html>

@@ -1,0 +1,81 @@
+@media screen {
+    svg[data-slimd-svg=""] {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background-color: black;
+    }
+    svg[data-slimd-svg=""] {
+        display: none;
+    }
+    svg[data-slimd-svg=""].slimd-active {
+        display: block;
+    }
+}
+
+code,
+pre {
+    font-family: 'Cascadia Code', 'Operator Mono', 'Source Code Pro', monospace;
+    font-variant: normal;
+}
+
+div#p>svg>foreignObject>section {
+    align-items: stretch;
+    background: #fff;
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 29px;
+    height: 100%;
+    justify-content: center;
+    padding: 78.5px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: center center;
+}
+
+div#p>svg>foreignObject img {
+    object-fit: contain;
+    min-width: 0;
+    min-height: 0;
+    flex-grow: 1;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.katex-display {
+    align-self: center;
+}
+
+@media print {
+    body,
+    html {
+        background-color: #fff;
+        margin: 0;
+        page-break-inside: avoid;
+        break-inside: avoid-page;
+    }
+    div#p>svg>foreignObject>section {
+        page-break-before: always;
+        break-before: page;
+    }
+    div#p>svg>foreignObject>section,
+    div#p>svg>foreignObject>section * {
+        -webkit-print-color-adjust: exact!important;
+        animation-delay: 0s!important;
+        animation-duration: 0s!important;
+        color-adjust: exact!important;
+        transition: none!important;
+    }
+    div#p>svg[data-slimd-svg] {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+    }
+}

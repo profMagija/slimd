@@ -1,0 +1,28 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+div.highlight {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+
+table.highlighttable {
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+table.highlighttable div.highlight {
+    border: none;
+}
+
+td.linenos {
+    padding-left: 30px;
+    width: 0;
+    min-width: fit-content;
+}
+
+footer {
+    color: #444;
+}
