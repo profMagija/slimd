@@ -52,7 +52,7 @@ def latex_handler(content, params):
         content
     )
 
-@aside_handler('graph')
-def graph_handler(content, params):
-    from .extensions import graph
-    return graph.graph_handle(content, params)
+@aside_handler('chart')
+def chart_handler(content, params):
+    from .extensions import chart
+    return chart.chart_handle(content, params)
