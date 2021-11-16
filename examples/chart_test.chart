@@ -1,0 +1,26 @@
+begin data -csv examples/data.csv
+end
+
+# qurton
+# begin bar
+#     x day
+#     y total_bill
+# end
+# 
+# begin bar
+#     x day
+#     y total_bill
+#     hue sex
+# end
+# 
+# begin bar
+#     x time
+#     y tip
+#     order Dinner Lunch
+# end
+
+begin bar
+    x day
+    y tip
+    capsize .2
+end

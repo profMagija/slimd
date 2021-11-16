@@ -148,7 +148,7 @@ class SlimdHtmlRenderer(HTMLRenderer):
 
     def render_better_code_fence(self, token):
         return self.render_block_code(token)
-    
+
     def render_math(self, token):
         token = token.content
         classes = 'katex'
@@ -157,7 +157,7 @@ class SlimdHtmlRenderer(HTMLRenderer):
             classes += ' katex-display'
         else:
             text = token[1:-1]
-        
+
         return '<span class="{}">{}</span>'.format(
             classes,
             text

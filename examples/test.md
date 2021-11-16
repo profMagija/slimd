@@ -37,6 +37,8 @@ def fact(x):
 
 An example paragraph $1$ with some $\sqrt{2}$ math.
 
+I have $$ (i am debt).
+
 Brought to you by the $\int^1_0 \frac{\sin x}{x} \,dx$ gang.
 
 ::: latex
@@ -62,3 +64,17 @@ Some more text under the graph.
 And even more text.
 
 Just to demonstrate auto-fitting of the graph above. yes it is magical. no I have never heared of `object-fit` before and tried to implement it manualy. yes I like to hurt myself.
+
+---
+
+## A chart example
+
+::: chart
+
+    begin data -example tips
+    end
+
+    begin bar
+        x day
+        y total_bill
+    end

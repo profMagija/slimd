@@ -1,4 +1,5 @@
 from mistletoe.span_token import SpanToken
+from mistletoe import latex_token
 from mistletoe.block_token import BlockToken, CodeFence, ThematicBreak
 
 import re
@@ -41,7 +42,7 @@ class AsideBlock(BlockToken):
         res = [next(lines)]
 
         def _is_content(line: str):
-            return (
+            return line is not None and (
                 not line.strip()
                 or line.startswith('    ')
                 or line.startswith('\t')
@@ -57,6 +58,7 @@ class AsideBlock(BlockToken):
 
         return res
 
+
 class BetterCodeFence(CodeFence):
     """
     Code fence. (["```sh\\n", "rm -rf /", ..., "```"])
@@ -67,6 +69,7 @@ class BetterCodeFence(CodeFence):
         language (str): language of code block (default to empty).
     """
     pattern = re.compile(r'( {0,3})((?:`|~){3,}) *(\S*)\s+(.*)')
+
     def __init__(self, match):
         super().__init__(match)
         _, open_info = match
